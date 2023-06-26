@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 	<!-- <link rel="stylesheet" href="lib/flickity/flickity.min.css"> -->
 	<link rel="stylesheet" href="./css/style.css">
 	<title>AR Cultural Masks</title>
@@ -16,11 +16,12 @@
 		<svg width="100%" height="100%">
 			<defs>
 				<pattern id="pattern-image" x="0" y="0" width="150" height="150" patternUnits="userSpaceOnUse">
-					<image xlink:href="./assets/background-motif.png" x="-25" y="-25" height="100" width="100"/>
-					<image xlink:href="./assets/background-motif.png" x="125" y="-25" height="100" width="100"/>
-					<image xlink:href="./assets/background-motif.png" x="50" y="0" height="100" width="100" style="transform: translate(25px, 50px) scale(0.5, -0.5);transform-origin: 50px 50px;"/>
-					<image xlink:href="./assets/background-motif.png" x="-25" y="125" height="100" width="100"/>
-					<image xlink:href="./assets/background-motif.png" x="125" y="125" height="100" width="100"/>
+					<image xlink:href="./assets/background-motif.png" x="-25" y="-25" height="100" width="100" />
+					<image xlink:href="./assets/background-motif.png" x="125" y="-25" height="100" width="100" />
+					<image xlink:href="./assets/background-motif.png" x="50" y="0" height="100" width="100"
+						style="transform: translate(25px, 50px) scale(0.5, -0.5);transform-origin: 50px 50px;" />
+					<image xlink:href="./assets/background-motif.png" x="-25" y="125" height="100" width="100" />
+					<image xlink:href="./assets/background-motif.png" x="125" y="125" height="100" width="100" />
 				</pattern>
 			</defs>
 			<rect x="0" y="0" width="100%" height="100%" stroke="none" fill="url(#pattern-image)" />
@@ -41,7 +42,8 @@
 					stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
 				<circle class="eyes" fill="#000" cx="25" cy="47" r="4" />
 				<circle class="eyes" fill="#000" cx="74" cy="46" r="4" />
-				<text id="loaderMsg" x="15" y="130" width="100" style="fill: black;font-family: monospace;">Loading...</text>
+				<text id="loaderMsg" x="15" y="130" width="100"
+					style="fill: black;font-family: monospace;">Loading...</text>
 			</g>
 		</svg>
 	</div>
@@ -54,9 +56,9 @@
 		</svg>
 		<span>Webcam visible</span>
 	</button>
-  <a id="artist" target="_blank" href="https://en.wikipedia.org/wiki/Chhau_mask">
-    chhau mask
-  </a>
+	<a id="artist" target="_blank" href="https://en.wikipedia.org/wiki/Chhau_mask">
+		Blue Ocean
+	</a>
 	<div class="carousel">
 	</div>
 	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
@@ -71,7 +73,7 @@
 	<script src="./js/frontProjectionUVMap.js"></script>
 	<script src="./js/positionBufferData.js"></script>
 	<script src="./js/FacePaint.js"></script>
-  <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 	<!-- <script src="lib/flickity/flickity.pkgd.min.js"></script> -->
 	<script src="https://unpkg.com/flickity-hash@1/hash.js"></script>
 	<!-- <script src="lib/flickity/hash.js"></script> -->
