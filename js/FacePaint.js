@@ -75,7 +75,7 @@ class FacePaint {
     this._material = new THREE.MeshPhongMaterial({
       map: texture,
       color: new THREE.Color(0xffffff),
-      specular: new THREE.Color(beta * 0.2, beta * 0.2, beta * 0.2),
+      // specular: new THREE.Color(beta * 0.2, beta * 0.2, beta * 0.2),
       reflectivity: beta,
       shininess: Math.pow(2, alpha * 10),
     });
