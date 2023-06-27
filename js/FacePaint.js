@@ -9,6 +9,13 @@ class FacePaint {
       382,
     ];
   }
+  static get MOUTH_VERTICES() {
+    return [
+      // MOUTH
+      44, 61, 40, 39, 37, 0, 267, 269, 270, 409, 291, 375, 321, 405, 314, 402,
+    ];
+  }
+
   _addCamera() {
     this._camera = new THREE.OrthographicCamera(
       this._halfW,

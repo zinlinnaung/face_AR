@@ -5,7 +5,7 @@
     {
       handle: "Blue Ocean",
       url: "https://en.wikipedia.org/wiki/Chhau_mask",
-      entry: "./assets/glasses2.png",
+      entry: "./assets/mask2.png",
       background: "hsl(35, 60%, 50%)",
     },
     {
@@ -17,9 +17,15 @@
     {
       handle: "Blue Ocean",
       url: "https://en.wikipedia.org/wiki/Cheriyal_scroll_painting#The_Tradition",
-      entry: "./assets/glass.png",
+      entry: "./assets/mask4.png",
       background: "hsl(198, 5%, 50%)",
     },
+    // {
+    //   handle: "Blue Ocean",
+    //   url: "https://en.wikipedia.org/wiki/Cheriyal_scroll_painting#The_Tradition",
+    //   entry: "./assets/mask5.png",
+    //   background: "hsl(198, 5%, 50%)",
+    // },
     // {
     //   handle: "Jamini Roy",
     //   url: "https://en.wikipedia.org/wiki/Jamini_Roy#Style",
