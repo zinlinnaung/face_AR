@@ -9,13 +9,6 @@ class FacePaint {
       382,
     ];
   }
-  static get MOUTH_VERTICES() {
-    return [
-      // MOUTH
-      44, 61, 40, 39, 37, 0, 267, 269, 270, 409, 291, 375, 321, 405, 314, 402,
-    ];
-  }
-
   _addCamera() {
     this._camera = new THREE.OrthographicCamera(
       this._halfW,
@@ -47,44 +40,50 @@ class FacePaint {
 
   _addGeometry() {
     this._geometry = new THREE.BufferGeometry();
-    // const EV = FacePaint.EYE_VERTICES;
-    // for (let i = TRIANGULATION.length - 1; i > -1; i -= 3) {
-    //   const a = TRIANGULATION[i];
-    //   const b = TRIANGULATION[i - 1];
-    //   const c = TRIANGULATION[i - 2];
-    //   if (
-    //     EV.indexOf(a) !== -1 ||
-    //     EV.indexOf(b) !== -1 ||
-    //     EV.indexOf(c) !== -1
-    //   ) {
-    //     TRIANGULATION.splice(i - 2, 3);
-    //   }
-    // }
     this._geometry.setIndex(TRIANGULATION);
+
+    const numVertices = positionBufferData.length / 3;
+    const alphaValues = new Float32Array(numVertices);
+
+    // Set alpha value for each vertex in the UV coordinates
+    for (let i = 0; i < numVertices; i++) {
+      const alpha = i < FacePaint.EYE_VERTICES.length ? 0.0 : 1.0; // Set alpha value for eye vertices
+      alphaValues[i] = alpha;
+    }
+
     this._geometry.setAttribute(
       "position",
       new THREE.Float32BufferAttribute(positionBufferData, 3)
     );
     this._geometry.setAttribute("uv", new THREE.Float32BufferAttribute(uvs, 2));
+    this._geometry.setAttribute(
+      "alpha",
+      new THREE.Float32BufferAttribute(alphaValues, 1)
+    );
     this._geometry.computeVertexNormals();
   }
 
   _addMaterial() {
     this._textureLoader = new THREE.TextureLoader();
     const texture = this._textureLoader.load(this._textureFilePath);
-    // set the "color space" of the texture
+
+    // Set the "color space" of the texture
     texture.encoding = THREE.sRGBEncoding;
 
-    // reduce blurring at glancing angles
+    // Reduce blurring at glancing angles
     texture.anisotropy = 16;
+
     const alpha = 0.4;
     const beta = 0.5;
+
     this._material = new THREE.MeshPhongMaterial({
       map: texture,
       color: new THREE.Color(0xffffff),
-      // specular: new THREE.Color(beta * 0.2, beta * 0.2, beta * 0.2),
+      specular: new THREE.Color(beta * 0.2, beta * 0.2, beta * 0.2),
       reflectivity: beta,
       shininess: Math.pow(2, alpha * 10),
+      transparent: true, // Enable transparency
+      alphaTest: 0.5, // Set alpha test threshold for transparency
     });
   }
 
